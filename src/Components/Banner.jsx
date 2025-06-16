@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Banner = () => {
     return (
@@ -14,8 +15,11 @@ const Banner = () => {
                 <div className="max-w-md ">
                     <h1 className="mb-5 text-3xl font-bold">Share Your Knowledge</h1>
                     <p className="mb-5">
-                        KnowHive is a buzzing hub where learners exchange wisdom, ideas, and insights. It fosters a collaborative community to grow, share knowledge, and innovate together.                        </p>
-                    <button className="btn btn-primary">Explore Articles</button>
+                        KnowHive is a buzzing hub where learners exchange wisdom, ideas, and insights. It fosters a collaborative community to grow, share knowledge, and innovate together.
+                    </p>
+                    <Link to={'allArticles'}>
+                        <button className="btn btn-primary">Explore Articles</button>
+                    </Link>
                 </div>
             </div>
         </div>

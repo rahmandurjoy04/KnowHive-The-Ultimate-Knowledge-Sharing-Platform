@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
-// import { valueContext } from '../Root';
 import ThemeToggle from '../Components/ThemeToggle';
+import { AuthContext } from '../AuthContext/AuthContext';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
-    // const { user, handleLogOut, authLoading } = useContext(valueContext);
+    const { user,signOutUser, authLoading } = use(AuthContext);
 
-    const user = true
-    const authLoading = false
 
 
 
 
     const handleLogOutBtn = () => {
-        // handleLogOut()
+        signOutUser()
+        .then(()=>{
+            toast.success('User SignedOut Successfully.')
+        })
+        .catch(error=>{
+            console.log(error);
+            toast.error('Something went wrong!')
+        })
     }
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/allrecipes'}>All Articles</NavLink>
+        <NavLink to={'/allArticles'}>All Articles</NavLink>
         <NavLink to={'/myArticles'}>My Articles</NavLink>
         <NavLink to={'/postArticles'}>Post Articles</NavLink>
         <NavLink to={'/about'}>About Us</NavLink>
@@ -33,7 +39,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-7 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-200 text-base-content rounded-box z-20 mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
@@ -89,7 +95,7 @@ const Navbar = () => {
                                     !user && <div>
                                         {
                                             (<>
-                                                <Link to={'/auth/login'} ><button className='btn mr-4'>LogIn</button></Link>
+                                                <Link to={'/login'} ><button className='btn mr-4'>LogIn</button></Link>
                                             </>)
                                         }
                                     </div>
