@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@tailwind utilities;
+
+a.active {
+  @apply font-bold bg-cyan-600 rounded-xl px-2 py-0.5
+}
