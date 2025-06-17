@@ -9,7 +9,7 @@ const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState('')
     // Using the context
-    const { createUser } = use(AuthContext)
+    const { createUser, profileUpdate } = use(AuthContext)
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -47,7 +47,13 @@ const Register = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res.user);
-                toast.success('User Account Created Successfully.')
+                profileUpdate(res.user, name, photo)
+                    .then(() => {
+                        toast.success('User Account Created Successfully.')
+                    })
+                    .catch((error) => {
+                        console.error('Error updating profile:', error);
+                    });
             })
             .catch(error => {
                 console.log(error)
