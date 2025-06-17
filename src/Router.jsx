@@ -7,44 +7,51 @@ import About from "./Components/About";
 import AllArticles from "./Components/AllArticles";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 const router = createBrowserRouter([
     {
-        path:'/',
-        Component:RootLayout,
-        children:[
+        path: '/',
+        Component: RootLayout,
+        children: [
             {
-                index:true,
-                Component:Home
+                index: true,
+                Component: Home
             },
             {
-                path:'allArticles',
-                Component:AllArticles
+                path: 'allArticles',
+                Component: AllArticles
 
             },
             {
-                path:'register',
-                element:<Register></Register>
+                path: 'register',
+                element: <Register></Register>
 
             },
             {
-                path:'login',
-                element:<Login></Login>
+                path: 'login',
+                element: <Login></Login>
 
             },
             {
-                path:'myArticles',
-                element:<MyArticles></MyArticles>
+                path: 'myArticles',
+                element:
+                    <PrivateRoute>
+                        <MyArticles></MyArticles>
+                    </PrivateRoute>
 
             },
             {
-                path:'postArticles',
-                element:<PostArticles></PostArticles>
+                path: 'postArticles',
+                element:
+                    <PrivateRoute>
+                        <PostArticles></PostArticles>
+                    </PrivateRoute>
 
             },
             {
-                path:'about',
-                Component:About
+                path: 'about',
+                Component: About
             }
         ]
     }
