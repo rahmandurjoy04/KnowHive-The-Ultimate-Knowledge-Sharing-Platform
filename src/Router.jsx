@@ -8,6 +8,7 @@ import AllArticles from "./Components/AllArticles";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import PrivateRoute from "./Routes/PrivateRoute";
+import CategoryArticles from "./Pages/CategoryArticles";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
                     </PrivateRoute>
 
             },
+            {
+                path:'/category/:categoryName',
+                Component:CategoryArticles
+            }
+            ,
             {
                 path: 'about',
                 Component: About

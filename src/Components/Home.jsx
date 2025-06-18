@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import RecentArticles from './RecentArticles';
+import CategoriesList from './CategoriesList';
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <Banner></Banner>
             <h1 className='text-xl sm:text-2xl md:text-4xl text-center mt-6'>Recent Articles</h1>
             <RecentArticles></RecentArticles>
+            <CategoriesList></CategoriesList>
         </div>
     );
 };

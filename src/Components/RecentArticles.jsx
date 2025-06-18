@@ -23,7 +23,7 @@ const RecentArticles = () => {
         <div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4'>
                 {
-                    recentArticles.map(article => <div key={article._id} className="card bg-base-100 w-auto shadow-sm">
+                    recentArticles.map(article => <div key={article._id} className="card bg-base-100 w-auto border shadow-sm">
                         <figure>
                             <img className='h-[250px] w-full'
                                 src={article.thumbnailURL}
@@ -31,7 +31,7 @@ const RecentArticles = () => {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title text-2xl">{article.title}</h2>
-                                <p className='rounded-lg text-lg p-2 bg-gray-100 w-full h-auto'>
+                                <p className='rounded-lg text-lg dark:text-black p-2 bg-gray-100 w-full h-auto'>
                                     {
                                         article.content.length > 100
                                             ? article.content.slice(0, 100) + '...'
