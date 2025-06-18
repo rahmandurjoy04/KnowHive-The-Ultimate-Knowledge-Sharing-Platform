@@ -1,38 +1,42 @@
 import React from 'react';
 import useAuth from '../Hooks/useAuth';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const PostArticles = () => {
 
 
     const { user } = useAuth();
-    console.log(user);
-
 
     const handlePostSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries())
-        data.tags = data.tags.split(',').map(tag=>tag.trim());
-        console.log(data);
+        data.tags = data.tags.split(',').map(tag => tag.trim());
+        data.author_id = user.uid;
+        data.createdAt = new Date();
 
         // save post to the db
-        axios.post('http://localhost:3000/articles',data)
-        .then(res=>{
-            console.log(res);
-        })
-        .catch(error=>{
-            console.log(error);
-        });
+        axios.post('http://localhost:3000/articles', data)
+            .then(res => {
+                const result = res.data;
+                if (result.acknowledged && result.insertedId) {
+                    toast.success('Article Posted Successfully.')
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error('Something went wrong while posting.')
+            });
 
     };
 
     return (
         <div className=''>
-            <h3 className="text-4xl text-center my-6">Post Your Article</h3>
+            <h3 className="text-xl sm:text-2xl md:text-4xl text-center my-6">Post Your Article</h3>
             <form className='mb-10' onSubmit={handlePostSubmit}>
-                <fieldset className="fieldset mx-auto bg-base-200 border-base-300 rounded-box w-xl border p-4">
+                <fieldset className="fieldset mx-auto bg-base-200 border-base-300 rounded-box max-w-xl min-w-sm border p-4">
 
                     {/* Title */}
                     <label className="label">Post Title</label>
@@ -62,13 +66,13 @@ const PostArticles = () => {
                     <input type="text" name='thumbnailURL' className="input w-full" placeholder="Thumbnain URL" />
                     {/* Date */}
                     <label className="label">Post Date</label>
-                    <input type="date" className="input w-full" name='date' />                    
+                    <input type="date" className="input w-full" name='date' />
                     {/* Author Email */}
                     <label className="label">Author's Email</label>
-                    <input type="text" name='email' className="input w-full" placeholder="Email" defaultValue={user.email} />
+                    <input type="text" name='email' className="input w-full" placeholder="Email" value={user?.email || ""} readOnly />
                     {/* Author Username */}
                     <label className="label">Author's Username</label>
-                    <input type="text" name='username' className="input w-full" placeholder="Username" defaultValue={user.displayName} />
+                    <input type="text" name='username' className="input w-full" placeholder="Username" value={user?.displayName || ""} readOnly/>
 
                     <button type='submit' className='btn btn-primary mt-4'>Submit</button>
                 </fieldset>

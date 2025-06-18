@@ -1,12 +1,13 @@
 import React from 'react';
 import Banner from './Banner';
-import FeaturedArticles from '../Pages/FeaturedArticles';
+import RecentArticles from './RecentArticles';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <FeaturedArticles></FeaturedArticles>
+            <h1 className='text-xl sm:text-2xl md:text-4xl text-center mt-6'>Recent Articles</h1>
+            <RecentArticles></RecentArticles>
         </div>
     );
 };
