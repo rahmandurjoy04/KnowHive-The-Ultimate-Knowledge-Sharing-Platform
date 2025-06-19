@@ -10,6 +10,7 @@ import Login from "./Pages/Login";
 import PrivateRoute from "./Routes/PrivateRoute";
 import CategoryArticles from "./Pages/CategoryArticles";
 import ArticleDetails from "./Components/ArticleDetails";
+import UpdateArticle from "./Components/UpdateArticle";
 
 const router = createBrowserRouter([
     {
@@ -52,13 +53,19 @@ const router = createBrowserRouter([
 
             },
             {
-                path:'/category/:categoryName',
-                Component:CategoryArticles
+                path: '/category/:categoryName',
+                Component: CategoryArticles
             },
             {
-                path:'/articles/:id',
-                Component:ArticleDetails,
-                loader:({params})=>fetch(`http://localhost:3000/articles/${params.id}`)
+                path: '/articles/:id',
+                Component: ArticleDetails,
+                loader: ({ params }) => fetch(`http://localhost:3000/articles/${params.id}`)
+            },
+            {
+                path: '/updateArticle/:id',
+                Component: UpdateArticle,
+                loader: ({ params }) => fetch(`http://localhost:3000/articles/${params.id}`)
+
             },
             {
                 path: 'about',

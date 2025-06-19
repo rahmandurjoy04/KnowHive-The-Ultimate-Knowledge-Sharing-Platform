@@ -18,7 +18,6 @@ const PostArticles = () => {
         data.createdAt = new Date();
         data.authorImage = user.photoURL;
 
-        console.log(data);
 
         // save post to the db
         axios.post('http://localhost:3000/articles', data)
@@ -36,7 +35,7 @@ const PostArticles = () => {
     };
 
     return (
-        <div className=''>
+        <div>
             <h3 className="text-xl sm:text-2xl md:text-4xl text-center my-6">Post Your Article</h3>
             <form className='mb-10' onSubmit={handlePostSubmit}>
                 <fieldset className="fieldset mx-auto bg-base-200 border-base-300 rounded-box max-w-xl min-w-sm border p-4">
