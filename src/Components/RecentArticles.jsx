@@ -6,7 +6,7 @@ const RecentArticles = () => {
     const [recentArticles, setRecentArticles] = useState(null);
     const [recentLoading, setRecentLoading] = useState(true);
     useEffect(() => {
-        axios.get('http://localhost:3000/articles/recent')
+        axios.get('http://localhost:3000/recentArticles')
             .then(res => {
                 setRecentLoading(false);
                 setRecentArticles(res.data);

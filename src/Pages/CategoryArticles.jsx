@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import Loading from '../Components/Loading';
 
 const CategoryArticles = () => {
@@ -18,6 +18,18 @@ const CategoryArticles = () => {
     }, [categoryName]);
 
     if (loading) return <Loading></Loading>;
+    if (articles.length === 0) {
+        return (
+            <div>
+                <h2 className="text-3xl font-semibold mb-4  text-center mt-5">{decodeURIComponent(categoryName)} Articles</h2>
+                <h1 className='text-xl sm:text-2xl md:text-4xl font-bold py-20 mx-6  bg-amber-200 text-red-700 rounded-xl text-center'>No Articles Yet</h1>
+                <Link to={'/postArticles'} className='flex justify-center my-6'>
+                    <button className='btn btn-primary'>Add Article</button>
+                </Link>
+            </div>
+
+        )
+    }
 
     return (
         <div>
@@ -29,19 +41,6 @@ const CategoryArticles = () => {
                         <div className="card-body">
                             <h2 className="card-title text-3xl">{article.title}</h2>
                             <p className='bg-gray-100 rounded-xl py-3 px-2 dark:text-black'>{article.content}</p>
-
-
-                            <p className='text-xl font-bold'>Tags:</p>
-                            <div className='grid grid-cols-3 gap-2'>
-                                {
-                                    article.tags.map((tag, index) => (
-                                        <div key={index}>
-                                            <button className="btn btn-info btn-outline w-full">{tag}</button>
-                                        </div>
-                                    )
-                                    )
-                                }
-                            </div>
                             <div className='flex justify-between mt-3'>
                                 <span className='text-sm font-semibold'>By {article.username}</span>
                                 <span className='text-sm font-semibold'>Date: {article.date}</span>

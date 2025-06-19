@@ -16,6 +16,9 @@ const PostArticles = () => {
         data.tags = data.tags.split(',').map(tag => tag.trim());
         data.author_id = user.uid;
         data.createdAt = new Date();
+        data.authorImage = user.photoURL;
+
+        console.log(data);
 
         // save post to the db
         axios.post('http://localhost:3000/articles', data)
@@ -63,7 +66,7 @@ const PostArticles = () => {
 
                     {/* Thumbnail URL */}
                     <label className="label">Thumbnail URL</label>
-                    <input type="text" name='thumbnailURL' className="input w-full" placeholder="Thumbnain URL" />
+                    <input type="text" name='thumbnailURL' className="input w-full" placeholder="Thumbnail URL" />
                     {/* Date */}
                     <label className="label">Post Date</label>
                     <input type="date" className="input w-full" name='date' />
