@@ -2,18 +2,14 @@ import React, { Suspense } from 'react';
 import { useLoaderData } from 'react-router';
 import CommentInArticle from './CommentInArticle';
 import Loading from './Loading';
-import useAuth from '../Hooks/useAuth';
 
 
 
 const ArticleDetails = () => {
 
-    const { user } = useAuth()
     const { title, content, category, tags, username, thumbnailURL, date } = useLoaderData();
 
-    if (!user) {
-        return <Loading></Loading>
-    }
+    
 
 
     return (
@@ -31,12 +27,6 @@ const ArticleDetails = () => {
                     {content}
                 </p>
 
-                {/* <div className='flex flex-wrap items-center'>
-                    <p className='font-bold'>Tags: </p>
-                    {
-                        tags.map((tag, index) => (<p className='border text-center rounded-lg px-1 my-1 mx-0.5 bg-[#176AE51A] text-[#176AE5]' key={index}>{tag}</p>))
-                    }
-                </div> */}
                 <div className='flex flex-col gap-1'>
                     <p className='font-bold'>Tags:</p>
                     <div className='flex flex-wrap items-center'>
@@ -55,9 +45,7 @@ const ArticleDetails = () => {
                     <span className='text-sm font-semibold'>By {username}</span>
                     <span className='text-sm font-semibold'>Date: {date}</span>
                 </div>
-                {/* <Link to={`/articles/${id}`}>
-                                <button className='btn btn-primary w-full'>Read More</button>
-                            </Link> */}
+                
             </div>
             <div className='border border-gray-300'></div>
             <CommentInArticle></CommentInArticle>
