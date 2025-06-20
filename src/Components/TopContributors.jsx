@@ -36,7 +36,7 @@ const TopContributors = () => {
             >
                 {
                     topContributors.map(contributor =>
-                        <div className="card bg-base-100 w-auto border shadow-sm">
+                        <div key={contributor._id} className="card bg-base-100 w-auto border shadow-sm">
                             <figure>
                                 <img className='h-[280px] object-cover w-full'
                                     src={contributor.authorImage}

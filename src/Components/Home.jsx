@@ -3,6 +3,7 @@ import Banner from './Banner';
 import RecentArticles from './RecentArticles';
 import CategoriesList from './CategoriesList';
 import TopContributors from './TopContributors';
+import Trendingtags from './Trendingtags';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <RecentArticles></RecentArticles>
             <CategoriesList></CategoriesList>
             <TopContributors></TopContributors>
+            <Trendingtags></Trendingtags>
         </div>
     );
 };

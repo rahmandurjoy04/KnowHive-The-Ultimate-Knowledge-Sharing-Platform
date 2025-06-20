@@ -17,6 +17,7 @@ const PostArticles = () => {
         data.author_id = user.uid;
         data.createdAt = new Date();
         data.authorImage = user.photoURL;
+        data.likes = 0;
 
 
         // save post to the db
