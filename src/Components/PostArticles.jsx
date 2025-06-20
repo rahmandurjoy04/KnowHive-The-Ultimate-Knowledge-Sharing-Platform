@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const PostArticles = () => {
 
 
-    const { user } = useAuth();
+    const { user, allArticles,setAllArticles } = useAuth();
 
     const handlePostSubmit = (e) => {
         e.preventDefault();
@@ -24,7 +24,9 @@ const PostArticles = () => {
             .then(res => {
                 const result = res.data;
                 if (result.acknowledged && result.insertedId) {
-                    toast.success('Article Posted Successfully.')
+                    toast.success('Article Posted Successfully.');
+                    const newAllArticles = [...allArticles,data]
+                    setAllArticles(newAllArticles);
                 }
             })
             .catch(error => {

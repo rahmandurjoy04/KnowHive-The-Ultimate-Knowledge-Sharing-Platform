@@ -11,6 +11,7 @@ import PrivateRoute from "./Routes/PrivateRoute";
 import CategoryArticles from "./Pages/CategoryArticles";
 import ArticleDetails from "./Components/ArticleDetails";
 import UpdateArticle from "./Components/UpdateArticle";
+import ErrorPage from "./Pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -26,16 +27,7 @@ const router = createBrowserRouter([
                 Component: AllArticles
 
             },
-            {
-                path: 'register',
-                element: <Register></Register>
 
-            },
-            {
-                path: 'login',
-                element: <Login></Login>
-
-            },
             {
                 path: 'myArticles',
                 element:
@@ -72,7 +64,21 @@ const router = createBrowserRouter([
                 Component: About
             }
         ]
-    }
+    },
+    {
+        path: '*',
+        Component: ErrorPage,
+    },
+    {
+        path: 'register',
+        element: <Register></Register>
+
+    },
+    {
+        path: 'login',
+        element: <Login></Login>
+
+    },
 ]);
 
 export default router;

@@ -1,16 +1,12 @@
 import React, { Suspense } from 'react';
 import { useLoaderData } from 'react-router';
 import CommentInArticle from './CommentInArticle';
-import Loading from './Loading';
-
 
 
 const ArticleDetails = () => {
 
     const { title, content, category, tags, username, thumbnailURL, date } = useLoaderData();
-
-    
-
+console.log(title);
 
     return (
         <div className="card bg-base-100 w-auto border shadow-sm max-w-lg my-6 mx-auto min-w-xs">

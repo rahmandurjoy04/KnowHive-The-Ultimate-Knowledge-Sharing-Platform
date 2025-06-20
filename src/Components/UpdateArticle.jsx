@@ -5,7 +5,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const UpdateArticle = () => {
-    const { user } = useAuth();
+    const { user, allArticles, setAllArticles } = useAuth();
     const { title, content, category, thumbnailURL, date, tags, _id } = useLoaderData();
     const tagsArray = tags.map(tag => tag.trim()).filter(tag => tag);
     console.log(tagsArray);
@@ -28,12 +28,20 @@ const UpdateArticle = () => {
         );
         const res = response.data;
         if (res.modifiedCount) {
+            // Update allArticles by replacing the old article
+            const updatedArticles = allArticles.map(article =>
+                article._id === _id ? { ...article, ...data, tags: data.tags } : article
+            );
+            setAllArticles(updatedArticles);
+            
             Swal.fire({
                 icon: "success",
                 title: "Your Article has been Updated.",
                 showConfirmButton: false,
                 timer: 1500
             });
+
+
         }
 
 

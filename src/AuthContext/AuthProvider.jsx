@@ -2,11 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider, updateProfile } from 'firebase/auth';
 import { auth } from '../Firebase/firebase.init';
+import axios from 'axios';
 
 const AuthProvider = ({ children }) => {
     const [authLoading, setAuthLoading] = useState(true);
     const [user, setUser] = useState(null);
     const googleProvider = new GoogleAuthProvider();
+    const [allArticles, setAllArticles] = useState(null);
+    const [allArticlesLoading, setAllArticlesLoading] = useState(true);
+
+
+
+    // Getting All Articles
+    useEffect(() => {
+        axios.get('http://localhost:3000/articles')
+            .then(res => {
+                setAllArticlesLoading(false);
+                setAllArticles(res.data);
+
+            })
+            .catch(err => console.error(err));
+    }, []);
 
     const createUser = (email, password) => {
         setAuthLoading(true)
@@ -33,13 +49,23 @@ const AuthProvider = ({ children }) => {
     }
 
     // Updating User profile
-    const profileUpdate = (user,name,photo) => {
+    const profileUpdate = async (user, name, photo) => {
         setAuthLoading(true);
-        return updateProfile(user, {
+        await updateProfile(user, {
             displayName: name,
             photoURL: photo
         })
-    }
+
+        // Update local user state
+        const updatedUser = {
+            ...user,
+            displayName: name,
+            photoURL: photo
+        };
+        setUser(updatedUser);
+        setAuthLoading(false);
+        return updatedUser;
+    };
 
     // settiog up ovserver
     useEffect(() => {
@@ -59,16 +85,19 @@ const AuthProvider = ({ children }) => {
         user,
         signOutUser,
         signInWithGoogle,
-        profileUpdate
+        profileUpdate,
+        allArticlesLoading,
+        allArticles,
+        setAllArticles
 
     }
 
     return (
-        <AuthContext value={authInfo}>
+        <AuthContext.Provider value={authInfo}>
 
             {children}
 
-        </AuthContext>
+        </AuthContext.Provider>
     );
 };
 
