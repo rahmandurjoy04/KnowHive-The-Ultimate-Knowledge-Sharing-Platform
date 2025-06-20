@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 const RecentArticles = () => {
     const [recentArticles, setRecentArticles] = useState(null);
     const [recentLoading, setRecentLoading] = useState(true);
+    
+    
     useEffect(() => {
         axios.get('http://localhost:3000/recentArticles')
             .then(res => {
@@ -14,6 +16,8 @@ const RecentArticles = () => {
             })
             .catch(err => console.error(err));
     }, []);
+
+    
 
 
     // Animation variants

@@ -12,7 +12,7 @@ const CategoriesList = () => {
     ]
     return (
         <div className=''>
-            <h1 className="text-3xl text-center mt-6">Article Categories</h1>
+            <h1 className="text-4xl text-center font-bold mt-6">Article Categories</h1>
             <div className="flex justify-center gap-8 p-4">
                 {categories.map(category => (
                     <Link

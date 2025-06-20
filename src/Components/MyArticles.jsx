@@ -3,7 +3,7 @@ import useAuth from '../Hooks/useAuth';
 import axios from 'axios';
 import Loading from './Loading';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 
