@@ -13,7 +13,12 @@ const MyArticles = () => {
     const [myArticlesLoading, setMyArticlesLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/myArticles?email=${user.email}`)
+        const token = localStorage.getItem('token')
+        axios.get(`http://localhost:3000/myArticles?email=${user.email}`, {
+            headers: {
+                 Authorization:`Bearer ${token}`
+                }
+        })
             .then(res => {
                 setMyArticlesLoading(false);
                 setMyArticles(res.data);

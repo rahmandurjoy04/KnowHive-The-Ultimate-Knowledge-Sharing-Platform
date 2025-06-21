@@ -17,7 +17,6 @@ const Trendingtags = () => {
                 console.log(error);
             })
     }, [])
-    console.log(trendings);
 
     const monthNames = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -28,7 +27,6 @@ const Trendingtags = () => {
     const year = now.getFullYear()
     const month = monthNames[now.getMonth()]
     const day = now.getDate()
-    console.log(day,month,year);
 
     if (trendingLoading) {
         return <Loading></Loading>

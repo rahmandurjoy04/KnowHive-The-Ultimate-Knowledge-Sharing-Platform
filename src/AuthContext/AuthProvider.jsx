@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
 
     // UserSignOut
     const signOutUser = () => {
-        setAuthLoading(true);
+        localStorage.removeItem("token")
         return signOut(auth);
 
     }
@@ -72,6 +72,18 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setAuthLoading(false);
+            if (currentUser?.email) {
+                const userData = { email: currentUser.email };
+                axios.post('http://localhost:3000/jwt', userData)
+                    .then(res => {
+                        const token = res.data.token;
+                        localStorage.setItem("token", token)
+                    })
+                    .catch(error => console.log(error))
+            }
+            else {
+                localStorage.removeItem("token")
+            }
         });
         return () => {
             unSubscribe();

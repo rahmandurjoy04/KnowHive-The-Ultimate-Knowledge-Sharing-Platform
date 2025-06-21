@@ -8,7 +8,8 @@ const UpdateArticle = () => {
     const { user, allArticles, setAllArticles } = useAuth();
     const { title, content, category, thumbnailURL, date, tags, _id } = useLoaderData();
     const tagsArray = tags.map(tag => tag.trim()).filter(tag => tag);
-    console.log(tagsArray);
+
+
     const handleUpdateArticle = async (e) => {
         e.preventDefault();
         const form = e.target;

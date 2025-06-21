@@ -20,7 +20,6 @@ const TopContributors = () => {
             })
     }, [])
 
-    console.log(topContributors);
 
     if (contributorsLoading) {
         return <Loading></Loading>
