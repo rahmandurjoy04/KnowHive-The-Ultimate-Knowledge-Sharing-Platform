@@ -15,7 +15,7 @@ const ArticleDetails = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/comments/${_id}`)
+        axios.get(`https://a-11-knowhive-srver.vercel.app/comments/${_id}`)
             .then(res => {
                 setComments(res.data);
                 setLoading(false)

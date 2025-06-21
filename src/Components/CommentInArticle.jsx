@@ -20,7 +20,7 @@ const CommentInArticle = ({likesCount,setLikesCount,commentsCount}) => {
             user_photo: user.photoURL,
             comment: comment,
         }
-        axios.post('http://localhost:3000/comments', commentData)
+        axios.post('https://a-11-knowhive-srver.vercel.app/comments', commentData)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -41,7 +41,7 @@ const CommentInArticle = ({likesCount,setLikesCount,commentsCount}) => {
     }
 
     const handleLike = (id) => {
-        axios.patch(`http://localhost:3000/articles/${id}/like`)
+        axios.patch(`https://a-11-knowhive-srver.vercel.app/articles/${id}/like`)
             .then((res) => {
                 if(res.data.modifiedCount){
                     toast.success('Post Liked')

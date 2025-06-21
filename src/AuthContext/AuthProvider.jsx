@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
 
     // Getting All Articles
     useEffect(() => {
-        axios.get('http://localhost:3000/articles')
+        axios.get('https://a-11-knowhive-srver.vercel.app/articles')
             .then(res => {
                 setAllArticlesLoading(false);
                 setAllArticles(res.data);
@@ -74,7 +74,7 @@ const AuthProvider = ({ children }) => {
             setAuthLoading(false);
             if (currentUser?.email) {
                 const userData = { email: currentUser.email };
-                axios.post('http://localhost:3000/jwt', userData)
+                axios.post('https://a-11-knowhive-srver.vercel.app/jwt', userData)
                     .then(res => {
                         const token = res.data.token;
                         localStorage.setItem("token", token)

@@ -13,7 +13,7 @@ const TopContributors = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:3000/top-contributors')
+        axios.get('https://a-11-knowhive-srver.vercel.app/top-contributors')
             .then(res => {
                 setContributorsLoading(false)
                 setTopContributors(res.data);

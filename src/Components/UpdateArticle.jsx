@@ -21,7 +21,7 @@ const UpdateArticle = () => {
         console.log(data);
 
         // Sending update
-        const response = await axios.patch(`http://localhost:3000/articles/${_id}`, data, {
+        const response = await axios.patch(`https://a-11-knowhive-srver.vercel.app/articles/${_id}`, data, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -34,7 +34,7 @@ const UpdateArticle = () => {
                 article._id === _id ? { ...article, ...data, tags: data.tags } : article
             );
             setAllArticles(updatedArticles);
-            
+
             Swal.fire({
                 icon: "success",
                 title: "Your Article has been Updated.",

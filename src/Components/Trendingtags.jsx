@@ -7,7 +7,7 @@ const Trendingtags = () => {
     const [trendingLoading, setTrendingLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/trending-tags')
+        axios.get('https://a-11-knowhive-srver.vercel.app/trending-tags')
             .then(res => {
                 setTrendings(res.data);
                 setTrendingLoading(false);

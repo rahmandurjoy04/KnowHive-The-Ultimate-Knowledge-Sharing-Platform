@@ -51,12 +51,12 @@ const router = createBrowserRouter([
             {
                 path: '/articles/:id',
                 Component: ArticleDetails,
-                loader: ({ params }) => fetch(`http://localhost:3000/articles/${params.id}`)
+                loader: ({ params }) => fetch(`https://a-11-knowhive-srver.vercel.app/articles/${params.id}`)
             },
             {
                 path: '/updateArticle/:id',
                 Component: UpdateArticle,
-                loader: ({ params }) => fetch(`http://localhost:3000/articles/${params.id}`)
+                loader: ({ params }) => fetch(`https://a-11-knowhive-srver.vercel.app/articles/${params.id}`)
 
             },
             {

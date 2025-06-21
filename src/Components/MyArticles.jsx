@@ -14,7 +14,7 @@ const MyArticles = () => {
 
     useEffect(() => {
         const token = localStorage.getItem('token')
-        axios.get(`http://localhost:3000/myArticles?email=${user.email}`, {
+        axios.get(`https://a-11-knowhive-srver.vercel.app/myArticles?email=${user.email}`, {
             headers: {
                  Authorization:`Bearer ${token}`
                 }
@@ -48,7 +48,7 @@ const MyArticles = () => {
             if (result.isConfirmed) {
 
                 // Start deleting the Article
-                fetch(`http://localhost:3000/articles/${id}`, {
+                fetch(`https://a-11-knowhive-srver.vercel.app/articles/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

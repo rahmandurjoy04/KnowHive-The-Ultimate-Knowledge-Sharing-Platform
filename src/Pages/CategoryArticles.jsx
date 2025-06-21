@@ -9,7 +9,7 @@ const CategoryArticles = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/articles/category/${categoryName}`)
+        axios.get(`https://a-11-knowhive-srver.vercel.app/articles/category/${categoryName}`)
             .then(res => {
                 setArticles(res.data);
                 setLoading(false);

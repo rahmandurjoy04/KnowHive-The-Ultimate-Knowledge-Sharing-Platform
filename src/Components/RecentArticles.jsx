@@ -8,7 +8,7 @@ const RecentArticles = () => {
     
     
     useEffect(() => {
-        axios.get('http://localhost:3000/recentArticles')
+        axios.get('https://a-11-knowhive-srver.vercel.app/recentArticles')
             .then(res => {
                 setRecentLoading(false);
                 setRecentArticles(res.data);

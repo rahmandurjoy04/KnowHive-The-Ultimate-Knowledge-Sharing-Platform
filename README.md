@@ -1,12 +1,59 @@
-# React + Vite
+# 🐝 KnowHive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **KnowHive** — a collaborative platform where curiosity thrives, knowledge flows, and ideas spark into conversation. Whether you're publishing insightful articles, exploring niche curiosities, or exchanging thoughts in the comments, KnowHive is your digital thinking ground.
 
-Currently, two official plugins are available:
+## 🔗 Live Website
+[https://a11-knowhive.web.app](https://a11-knowhive.web.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌟 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📝 **Post Articles**: Share your discoveries with the hive — including title, content, tags, categories, and images.
+- 📚 **Browse by Category**: Filter content by themes like science, curious facts, history & culture, and more.
+- 💬 **Comments & Interactions**: Engage with articles through threaded discussions.
+- ❤️ **Like System**: Appreciate insightful articles with one-click likes.
+- 🔍 **Trending Tags**: See what the community is buzzing about.
+- 🧠 **Top Contributors**: Celebrate the hive’s most active minds.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React, Tailwind CSS, Axios, React Router
+- **Backend**: Express.js, MongoDB, Node.js
+- **Authentication**: Firebase Auth
+- **Hosting**: Firebase Hosting
+- **State Sharing**: React Context / Custom Hooks
+
+
+## 🛠️ Tech Stack
+
+| Area         | Technology                                   |
+|--------------|-----------------------------------------------|
+| **Frontend** | React, React Router DOM, Axios                |
+| **Styling**  | Tailwind CSS, DaisyUI, Framer Motion          |
+| **Backend**  | Node.js, Express, MongoDB                     |
+| **Auth**     | Firebase Authentication                       |
+| **Hosting**  | Firebase Hosting                              |
+
+---
+
+## 📦 Project Dependencies
+
+| Package              | Description                                                  |
+|----------------------|--------------------------------------------------------------|
+| **react**            | Core UI library                                              |
+| **react-router**     | Routing logic for the app                                    |
+| **react-router-dom** | Browser routing implementation for React                     |
+| **axios**            | HTTP client for API requests                                 |
+| **tailwindcss**      | Utility-first CSS framework                                  |
+| **daisyui**          | Component UI library for Tailwind                            |
+| **firebase**         | Authentication and hosting                                   |
+| **framer-motion**    | Declarative animations and transitions                       |
+| **lottie-react**     | Render After Effects animations as React components          |
+| **react-icons**      | Icon packs for modern UI needs                               |
+| **react-toastify**   | Toast-style notifications                                    |
+| **sweetalert2**      | Customizable, beautiful modal popups                         |
+
+---

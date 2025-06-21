@@ -21,7 +21,7 @@ const PostArticles = () => {
 
 
         // save post to the db
-        axios.post('http://localhost:3000/articles', data)
+        axios.post('https://a-11-knowhive-srver.vercel.app/articles', data)
             .then(res => {
                 const result = res.data;
                 if (result.acknowledged && result.insertedId) {
