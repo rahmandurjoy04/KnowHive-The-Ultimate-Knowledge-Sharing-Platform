@@ -2,7 +2,7 @@ import React, { use, useState } from 'react';
 import Lottie from 'lottie-react';
 import registerLottie from '../assets/Lotties/Register.json'
 import { AuthContext } from '../AuthContext/AuthContext';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router';
 
 const Register = () => {
@@ -12,7 +12,7 @@ const Register = () => {
     const { createUser, profileUpdate } = use(AuthContext)
 
     const navigate = useNavigate();
-    
+
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -52,7 +52,8 @@ const Register = () => {
                 toast.success('User Account Created Successfully.');
                 profileUpdate(res.user, name, photo)
                     .then(() => {
-                        navigate('/');
+                        setTimeout(() => navigate('/'), 3500);
+
                     })
                     .catch((error) => {
                         console.error('Error updating profile:', error);
@@ -93,7 +94,6 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer />
         </div>
     );
 };

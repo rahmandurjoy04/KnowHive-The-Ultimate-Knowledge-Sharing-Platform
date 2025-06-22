@@ -103,7 +103,7 @@ const MyArticles = () => {
                                             <div className="avatar">
                                                 <div className="mask mask-squircle h-12 w-12">
                                                     <img
-                                                        src={myArticle.thumbnailURL}
+                                                        src={myArticle?.thumbnailURL||null}
                                                         alt="Post Thumbnail" />
                                                 </div>
                                             </div>
