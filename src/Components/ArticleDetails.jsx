@@ -74,15 +74,16 @@ const ArticleDetails = () => {
             <div>
                 {
                     comments.length ?
-                        comments.map(comment => <div key={comment._id} className="flex border-b flex-col max-w-lg p-6 space-y-6 overflow-hidden shadow-md bg-base-100 border my-4 mx-5 rounded-xl">
+                        comments.map(comment => <div key={comment._id} className="flex border-b flex-col max-w-lg p-6 space-y-3 overflow-hidden shadow-md bg-base-100 border my-4 mx-5 rounded-xl">
                             <div className="flex space-x-4">
                                 <img alt="" src={comment?.user_photo} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                                 <div className="flex flex-col space-y-1">
                                     <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{comment.displayName}</a>
                                     <span className="text-xs">{comment.user_name}</span>
+                                    <span className="text-xs">{comment.date}</span>
                                 </div>
                             </div>
-                            <div className='rounded p-3'>{comment.comment}</div>
+                            <div className='rounded p-2 border'>{comment.comment}</div>
 
                         </div>)
                         : <>

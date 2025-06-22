@@ -10,15 +10,28 @@ const CommentInArticle = ({likesCount,setLikesCount,commentsCount}) => {
     const { user } = useAuth();
     const { id } = useParams();
 
+    const monthNames = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+    const now = new Date;
+    const year = now.getFullYear()
+    const month = monthNames[now.getMonth()]
+    const day = now.getDate()
+    const formattedDate = `${day} ${month} ${year}`;
+
     const handleComment = (e) => {
         e.preventDefault();
-        const comment = e.target.comment.value;
+        const form = e.target;
+        const comment = form.comment.value;
         const commentData = {
             article_id: id,
             user_id: user.uid,
             user_name: user.displayName,
             user_photo: user.photoURL,
             comment: comment,
+            date:formattedDate
         }
         axios.post('https://a-11-knowhive-srver.vercel.app/comments', commentData)
             .then(res => {
@@ -30,6 +43,9 @@ const CommentInArticle = ({likesCount,setLikesCount,commentsCount}) => {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    form.reset();
+                    window.location.reload();
+
                 }
             })
             .catch(error => console.log(error))
@@ -60,8 +76,8 @@ const CommentInArticle = ({likesCount,setLikesCount,commentsCount}) => {
             <div className="flex space-x-4">
                 <img alt="" src={user?.photoURL} className="object-cover w-12 h-12 rounded-full shadow " />
                 <div className="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{user.displayName}</a>
-                    <span className="text-xs">{user.email}</span>
+                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{user?.displayName}</a>
+                    <span className="text-xs">{user?.email}</span>
                 </div>
             </div>
             <form onSubmit={handleComment}>
@@ -69,7 +85,7 @@ const CommentInArticle = ({likesCount,setLikesCount,commentsCount}) => {
                     <legend className="fieldset-legend ">Write Your Comment Here</legend>
                     <textarea name='comment' className="textarea h-24 w-full" placeholder="Your Comment"></textarea>
                 </fieldset>
-                <button className='btn btn-primary w-full'>Comment</button>
+                <button className='btn btn-primary w-full mt-2'>Comment</button>
             </form>
             <div className="flex flex-wrap justify-between">
                 <div className="space-x-2">

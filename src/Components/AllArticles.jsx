@@ -45,7 +45,7 @@ const AllallArticles = () => {
 
     return (
         <div>
-            <div className='flex justify-center mt-4'>
+            <div className='flex justify-center mt-4 min-w-sm'>
 
                 <select
                     value={selectedCategory}
@@ -78,7 +78,7 @@ const AllallArticles = () => {
                                         animate="visible"
                                         variants={fadeIn}
                                     >
-                                        <div className="card bg-base-100 w-auto border shadow-sm">
+                                        <div className="card bg-base-100  border min-w-xs max-w-sm mx-auto sm:max-w-lg h-full shadow-sm">
 
                                             <div className="card-body">
                                                 <h2 className="card-title text-2xl">{article.title}</h2>
@@ -90,9 +90,7 @@ const AllallArticles = () => {
                                                 <Link to={`/articles/${article._id}`}>
                                                     <button className='btn btn-primary w-full'>Read More</button>
                                                 </Link>
-                                                {
-                                console.log(article)
-                            }
+
                                             </div>
                                         </div>
                                     </motion.div>

@@ -2,7 +2,7 @@ import React, { use, useState } from 'react';
 import Lottie from 'lottie-react';
 import registerLottie from '../assets/Lotties/Register.json'
 import { AuthContext } from '../AuthContext/AuthContext';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { Link, useNavigate } from 'react-router';
 
 const Register = () => {
@@ -49,10 +49,9 @@ const Register = () => {
 
         createUser(email, password)
             .then(res => {
-                console.log(res.user);
+                toast.success('User Account Created Successfully.');
                 profileUpdate(res.user, name, photo)
                     .then(() => {
-                        toast.success('User Account Created Successfully.');
                         navigate('/');
                     })
                     .catch((error) => {
@@ -94,6 +93,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

@@ -26,8 +26,8 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         axios.get('https://a-11-knowhive-srver.vercel.app/articles')
             .then(res => {
-                setAllArticlesLoading(false);
                 setAllArticles(res.data);
+                setAllArticlesLoading(false);
 
             })
             .catch(err => console.error(err));

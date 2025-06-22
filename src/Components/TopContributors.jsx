@@ -39,7 +39,7 @@ const TopContributors = () => {
                             <figure>
                                 <img className='h-[280px] object-cover w-full'
                                     src={contributor.authorImage}
-                                    alt="Shoes" />
+                                    alt="Image" />
                             </figure>
                             <div className='border'></div>
 

@@ -18,7 +18,6 @@ const UpdateArticle = () => {
         data.tags = data.tags.split(',').map(tag => tag.trim());
         data.author_id = user.uid;
         data.authorImage = user.photoURL;
-        console.log(data);
 
         // Sending update
         const response = await axios.patch(`https://a-11-knowhive-srver.vercel.app/articles/${_id}`, data, {

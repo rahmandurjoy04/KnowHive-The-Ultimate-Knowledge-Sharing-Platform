@@ -43,7 +43,7 @@ const RecentArticles = () => {
                             animate="visible"
                             variants={fadeIn}
                         >
-                            <div className="card bg-base-100 w-auto border shadow-sm">
+                            <div className="card bg-base-100 w-auto border h-full shadow-sm">
                                 <figure>
                                     <img className='h-[250px] w-full'
                                         src={article.thumbnailURL}

@@ -30,7 +30,6 @@ const Navbar = () => {
 
     </>
     return (
-        <div>
             <div className="navbar text-white min-w-sm  bg-[#262626] shadow-sm">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -113,7 +112,6 @@ const Navbar = () => {
 
 
             </div>
-        </div>
     );
 };
 
