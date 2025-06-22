@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import useAuth from '../Hooks/useAuth';
 
 const CategoriesList = () => {
 
-    const categories = [
-        'Science & Technology',
-        'History & Culture',
-        'Curious Facts',
-        'Daily Discoveries',
-        'Explainers (How It Works)'
-    ]
+    const {categories} = useAuth()
+
+    // const categories = [
+    //     'Science & Technology',
+    //     'History & Culture',
+    //     'Curious Facts',
+    //     'Daily Discoveries',
+    //     'Explainers (How It Works)'
+    // ]
     return (
         <div className=''>
             <h1 className="text-4xl text-center font-bold mt-6">Article Categories</h1>

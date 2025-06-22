@@ -12,6 +12,15 @@ const AuthProvider = ({ children }) => {
     const [allArticlesLoading, setAllArticlesLoading] = useState(true);
 
 
+    const categories = [
+        'Science & Technology',
+        'History & Culture',
+        'Curious Facts',
+        'Daily Discoveries',
+        'Explainers (How It Works)'
+    ]
+
+
 
     // Getting All Articles
     useEffect(() => {
@@ -100,7 +109,8 @@ const AuthProvider = ({ children }) => {
         profileUpdate,
         allArticlesLoading,
         allArticles,
-        setAllArticles
+        setAllArticles,
+        categories
 
     }
 

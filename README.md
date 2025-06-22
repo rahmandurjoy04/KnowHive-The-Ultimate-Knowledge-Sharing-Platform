@@ -27,17 +27,6 @@ Welcome to **KnowHive** — a collaborative platform where curiosity thrives, kn
 - **State Sharing**: React Context / Custom Hooks
 
 
-## 🛠️ Tech Stack
-
-| Area         | Technology                                   |
-|--------------|-----------------------------------------------|
-| **Frontend** | React, React Router DOM, Axios                |
-| **Styling**  | Tailwind CSS, DaisyUI, Framer Motion          |
-| **Backend**  | Node.js, Express, MongoDB                     |
-| **Auth**     | Firebase Authentication                       |
-| **Hosting**  | Firebase Hosting                              |
-
----
 
 ## 📦 Project Dependencies
 
