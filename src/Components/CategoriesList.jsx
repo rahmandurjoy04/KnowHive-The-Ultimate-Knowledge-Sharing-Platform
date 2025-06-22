@@ -6,17 +6,10 @@ const CategoriesList = () => {
 
     const {categories} = useAuth()
 
-    // const categories = [
-    //     'Science & Technology',
-    //     'History & Culture',
-    //     'Curious Facts',
-    //     'Daily Discoveries',
-    //     'Explainers (How It Works)'
-    // ]
     return (
-        <div className=''>
+        <div className='min-w-sm'>
             <h1 className="text-4xl text-center font-bold mt-6">Article Categories</h1>
-            <div className="flex justify-center gap-8 p-4">
+            <div className="flex flex-col md:flex-row justify-center gap-8 p-4">
                 {categories.map(category => (
                     <Link
                         key={category}

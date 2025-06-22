@@ -32,16 +32,16 @@ const Trendingtags = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='mx-4'>
+        <div className='min-w-sm mx-auto'>
             <h1 className='text-xl md:text-4xl font-bold text-center my-5'>Trending Tags</h1>
-            <div className="stats border shadow w-full mb-7">
+            <div className="flex flex-col md:flex-row justify-around border rounded-xl shadow mx-4 md:mx-3 mb-7 divide-y md:divide-y-0 divide-gray-300">
 
                 {
                     trendings.map(trending => 
-                    <div key={trending._id} className="stat place-items-center">
-                        <div className="stat-title text-lg text-error">{trending._id}</div>
-                        <div className="stat-value text-accent font-bold">{trending.count}</div>
-                        <div className="stat-desc">Times Till {day} {month} {year}</div>
+                    <div key={trending._id} className="text-center py-3">
+                        <div className="text-lg text-error">{trending._id}</div>
+                        <div className="text-accent text-5xl py-3 font-bold">{trending.count}</div>
+                        <div className="">Times Till {day} {month} {year}</div>
                     </div>
                     )
                 }

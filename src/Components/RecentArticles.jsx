@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 const RecentArticles = () => {
     const [recentArticles, setRecentArticles] = useState(null);
     const [recentLoading, setRecentLoading] = useState(true);
-    
-    
+
+
     useEffect(() => {
         axios.get('https://a-11-knowhive-srver.vercel.app/recentArticles')
             .then(res => {
@@ -17,7 +17,7 @@ const RecentArticles = () => {
             .catch(err => console.error(err));
     }, []);
 
-    
+
 
 
     // Animation variants
@@ -31,6 +31,9 @@ const RecentArticles = () => {
     }
 
     return (
+        <div className='min-w-sm'>
+            <h1 className='text-xl sm:text-2xl md:text-4xl font-bold text-center mt-6'>Recent Articles</h1>
+
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4'>
                 {
                     recentArticles.map(article =>
@@ -44,7 +47,7 @@ const RecentArticles = () => {
                                 <figure>
                                     <img className='h-[250px] w-full'
                                         src={article.thumbnailURL}
-                                        alt="Shoes" />
+                                        alt="Thumbnail URL" />
                                 </figure>
                                 <div className="card-body">
                                     <h2 className="card-title text-2xl">{article.title}</h2>
@@ -65,6 +68,8 @@ const RecentArticles = () => {
                     )
                 }
             </div>
+        </div>
+
     );
 };
 

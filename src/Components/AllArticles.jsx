@@ -61,8 +61,7 @@ const AllallArticles = () => {
                             {
                                 category
                             }
-
-
+                            
                         </option>
                     ))}
                 </select>
@@ -91,6 +90,9 @@ const AllallArticles = () => {
                                                 <Link to={`/articles/${article._id}`}>
                                                     <button className='btn btn-primary w-full'>Read More</button>
                                                 </Link>
+                                                {
+                                console.log(article)
+                            }
                                             </div>
                                         </div>
                                     </motion.div>

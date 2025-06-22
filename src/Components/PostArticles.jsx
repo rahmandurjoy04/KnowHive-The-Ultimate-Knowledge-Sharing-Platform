@@ -28,6 +28,7 @@ const PostArticles = () => {
                     toast.success('Article Posted Successfully.');
                     const newAllArticles = [...allArticles,data]
                     setAllArticles(newAllArticles);
+                    form.reset();
                 }
             })
             .catch(error => {

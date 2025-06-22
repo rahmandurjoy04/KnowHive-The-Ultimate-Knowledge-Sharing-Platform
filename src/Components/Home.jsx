@@ -7,13 +7,14 @@ import Trendingtags from './Trendingtags';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Banner></Banner>
-            <h1 className='text-xl sm:text-2xl md:text-4xl font-bold text-center mt-6'>Recent Articles</h1>
-            <RecentArticles></RecentArticles>
-            <CategoriesList></CategoriesList>
-            <TopContributors></TopContributors>
-            <Trendingtags></Trendingtags>
+            <div  className='w-11/12 mx-auto'>
+                <RecentArticles></RecentArticles>
+                <CategoriesList></CategoriesList>
+                <TopContributors></TopContributors>
+                <Trendingtags></Trendingtags>
+            </div>
         </div>
     );
 };
