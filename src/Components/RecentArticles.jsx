@@ -54,12 +54,12 @@ const RecentArticles = () => {
                                     <h2 className="card-title text-2xl">{article.title}</h2>
                                     <p className='rounded-lg text-lg dark:text-black  w-full h-auto'>
                                         {
-                                            article.content.length > 40
+                                            article.content.length > 55
                                                 ? <>
-                                                    {article.content.slice(0, 40)}{" "}
+                                                    {article.content.slice(0, 55)}{" "}
                                                     <Link
                                                         to={`/articles/${article._id}`}
-                                                        className="text-blue-500 hover:text-blue-700"
+                                                        className="text-primary hover:text-blue-700"
                                                     >
                                                         See More...
                                                     </Link>

@@ -4,7 +4,7 @@ import bannerImg from '../assets/knowhive-banner.png';
 
 const Banner = () => {
     return (
-        <div className="flex min-h-[70vh] flex-col md:flex-row mt-10 min-w-sm  justify-center items-center rounded-xl gap-20 py-20 px-0 mx-auto md:px-10 bg-[#707f89]">
+        <div className="flex min-h-[70vh] flex-col md:flex-row mt-10 min-w-sm  justify-center items-center rounded-xl gap-20 py-12 px-0 mx-auto md:px-10 bg-[#707f89]">
 
             <div className="w-full px-6 md:w-8/12 md:pl-20 flex flex-col justify-center items-center md:justify-start md:items-start  gap-10 text-white">
                 <h1 className=" text-4xl font-bold text-center md:text-start">Share Your Knowledge</h1>

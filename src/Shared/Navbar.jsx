@@ -97,7 +97,7 @@ const Navbar = () => {
                                     !user && <div>
                                         {
                                             (<>
-                                                <Link to={'/login'} ><button className='btn mr-4'>LogIn</button></Link>
+                                                <Link to={'/login'} ><button className='btn'>LogIn</button></Link>
                                             </>)
                                         }
                                     </div>

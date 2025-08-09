@@ -12,6 +12,7 @@ import CategoryArticles from "./Pages/CategoryArticles";
 import ArticleDetails from "./Components/ArticleDetails";
 import UpdateArticle from "./Components/UpdateArticle";
 import ErrorPage from "./Pages/ErrorPage";
+import Contributors from "./Pages/Contributors";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
                 Component: AllArticles
 
             },
+            {
+                path: 'contributors',
+                Component: Contributors
 
+            },
             {
                 path: 'myArticles',
                 element:
