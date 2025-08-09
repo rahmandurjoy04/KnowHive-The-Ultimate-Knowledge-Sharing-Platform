@@ -32,9 +32,9 @@ const Trendingtags = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='min-w-sm mx-auto'>
+        <div className='min-w-sm mx-auto '>
             <h1 className='text-xl md:text-4xl font-bold text-center my-5'>Trending Tags</h1>
-            <div className="flex flex-col md:flex-row justify-around border rounded-xl shadow mx-4 md:mx-3 mb-7 divide-y md:divide-y-0 divide-gray-300">
+            <div className="flex flex-col md:flex-row justify-around border rounded-xl shadow mb-7 divide-y md:divide-y-0 divide-gray-300">
 
                 {
                     trendings.map(trending => 

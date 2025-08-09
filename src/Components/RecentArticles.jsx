@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Loading from '../Components/Loading';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router';
 const RecentArticles = () => {
     const [recentArticles, setRecentArticles] = useState(null);
     const [recentLoading, setRecentLoading] = useState(true);
@@ -32,9 +33,9 @@ const RecentArticles = () => {
 
     return (
         <div className='min-w-sm'>
-            <h1 className='text-xl sm:text-2xl md:text-4xl font-bold text-center mt-6'>Recent Articles</h1>
+            <h1 className='text-xl sm:text-2xl md:text-4xl font-bold text-center my-5'>Recent Articles</h1>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
                 {
                     recentArticles.map(article =>
                         <motion.div
@@ -43,7 +44,7 @@ const RecentArticles = () => {
                             animate="visible"
                             variants={fadeIn}
                         >
-                            <div className="card bg-base-100 w-auto border h-full shadow-sm">
+                            <div className="card bg-base-100 w-auto  h-full shadow-md">
                                 <figure>
                                     <img className='h-[250px] w-full'
                                         src={article.thumbnailURL}
@@ -51,10 +52,18 @@ const RecentArticles = () => {
                                 </figure>
                                 <div className="card-body">
                                     <h2 className="card-title text-2xl">{article.title}</h2>
-                                    <p className='rounded-lg text-lg dark:text-black p-2 bg-gray-100 w-full h-auto'>
+                                    <p className='rounded-lg text-lg dark:text-black  w-full h-auto'>
                                         {
-                                            article.content.length > 100
-                                                ? article.content.slice(0, 100) + '...'
+                                            article.content.length > 40
+                                                ? <>
+                                                    {article.content.slice(0, 40)}{" "}
+                                                    <Link
+                                                        to={`/articles/${article._id}`}
+                                                        className="text-blue-500 hover:text-blue-700"
+                                                    >
+                                                        See More...
+                                                    </Link>
+                                                </>
                                                 : article.content
                                         }
                                     </p>

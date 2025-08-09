@@ -56,8 +56,8 @@ const Login = () => {
                 <div className="text-center lg:text-left">
                     <Lottie className='w-auto md:w-[700px]' animationData={loginLottie} loop={true}></Lottie>
                 </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <div className="card-body">
+                <div className=" w-full max-w-sm shrink-0">
+                    <div className="card-body bg-base-100 rounded-lg">
                         <h1 className="text-5xl font-bold text-center">Login now!</h1>
 
                         <button onClick={handleGoogleSignIn} className="btn mt-5 text-xl bg-white text-black border-[#e5e5e5]">
@@ -78,6 +78,7 @@ const Login = () => {
                             </fieldset>
                         </form>
                         <Link className='text-center' to={'/register'}>Don't have an Account? <span className='text-blue-500'>Register</span> Now</Link>
+                    <Link to={'/'}><button className='btn w-full bg-primary shadow-lg text-white'>Back to Home</button></Link>
                     </div>
                 </div>
             </div>

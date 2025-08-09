@@ -3,6 +3,17 @@
 
 @tailwind utilities;
 
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-primary: #0d68a0;
+  --color-secondary: #7db4d8;
+  --color-base-200: #f0f1f7;    
+  --color-base-content: #040316;
+}
+
 a.active {
-  @apply font-bold bg-cyan-600 rounded-xl px-2 py-0.5
+  @apply font-bold bg-[#0d68a0] rounded-xl px-2 py-0.5
 }

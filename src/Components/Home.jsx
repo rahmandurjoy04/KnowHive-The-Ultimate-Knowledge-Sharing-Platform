@@ -8,8 +8,8 @@ import Trendingtags from './Trendingtags';
 const Home = () => {
     return (
         <div className=''>
-            <Banner></Banner>
-            <div  className='w-11/12 mx-auto'>
+            <div className='w-11/12 mx-auto'>
+                <Banner></Banner>
                 <RecentArticles></RecentArticles>
                 <CategoriesList></CategoriesList>
                 <TopContributors></TopContributors>

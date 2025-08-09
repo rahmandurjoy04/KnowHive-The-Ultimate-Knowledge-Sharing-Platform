@@ -5,7 +5,7 @@ import { AuthContext } from '../AuthContext/AuthContext';
 import { toast } from 'react-toastify';
 
 const Navbar = () => {
-    const { user,signOutUser, authLoading } = use(AuthContext);
+    const { user, signOutUser, authLoading } = use(AuthContext);
 
 
 
@@ -13,24 +13,26 @@ const Navbar = () => {
 
     const handleLogOutBtn = () => {
         signOutUser()
-        .then(()=>{
-            toast.success('User SignedOut Successfully.')
-        })
-        .catch(error=>{
-            console.log(error);
-            toast.error('Something went wrong!')
-        })
+            .then(() => {
+                toast.success('User SignedOut Successfully.')
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error('Something went wrong!')
+            })
     }
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/allArticles'}>All Articles</NavLink>
         <NavLink to={'/myArticles'}>My Articles</NavLink>
         <NavLink to={'/postArticles'}>Post Articles</NavLink>
+        <NavLink to={'/contributors'}>Contributors</NavLink>
         <NavLink to={'/about'}>About Us</NavLink>
 
     </>
     return (
-            <div className="navbar text-white min-w-sm  bg-[#262626] shadow-sm">
+        <div className="navbar text-white min-w-sm  bg-[#1391e4] shadow-sm">
+            <div className='w-11/12 mx-auto flex'>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost sm:hidden">
@@ -43,7 +45,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='flex gap-4 items-center'>
-                        <h1 className='text-xl'><span className='font-extrabold'>Know</span>Hive</h1>
+                        <h1 className='text-3xl'><span className='font-extrabold'>Know</span>Hive</h1>
                         <ThemeToggle></ThemeToggle>
                     </div>
                 </div>
@@ -54,8 +56,6 @@ const Navbar = () => {
                         }
                     </ul>
                 </div >
-
-
                 <div className="navbar-end space-x-3">
                     {
                         authLoading ? (<span className="loading loading-dots loading-xl mr-4"></span>
@@ -66,11 +66,13 @@ const Navbar = () => {
                                         <div className="flex gap-2">
                                             <div className="dropdown dropdown-end text-black">
                                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                                    <div className="w-10 rounded-full">
+                                                    <div className="w-10 h-10 rounded-full">
                                                         <img
                                                             src={user?.photoURL}
                                                             alt="photo"
-                                                             />
+                                                            referrerPolicy="no-referrer"
+                                                            className="w-full h-full object-cover"
+                                                        />
                                                     </div>
                                                 </div>
                                                 <ul
@@ -109,9 +111,8 @@ const Navbar = () => {
                         </>)
                     }
                 </div>
-
-
             </div>
+        </div>
     );
 };
 

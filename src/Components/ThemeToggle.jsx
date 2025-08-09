@@ -12,7 +12,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button className="btn btn-sm rounded-full" onClick={toggleTheme}>
+    <button className="btn w-[40px] h-[40px] rounded-full" onClick={toggleTheme}>
       {theme === "light" ? "🌙" : "☀️"}
     </button>
   );

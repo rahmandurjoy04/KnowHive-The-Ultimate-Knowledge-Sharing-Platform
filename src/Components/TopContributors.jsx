@@ -26,12 +26,12 @@ const TopContributors = () => {
     }
     return (
         <div className='min-w-sm'>
-            <h1 className='text-xl md:text-4xl font-bold text-center mt-7'>Top Contributors</h1>
+            <h1 className='text-xl md:text-4xl font-bold text-center my-5'>Top Contributors</h1>
             <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
-                className='grid grid-cols-1 md:grid-cols-4 gap-5 px-4 my-5'
+                className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  my-5'
             >
                 {
                     topContributors.map(contributor =>

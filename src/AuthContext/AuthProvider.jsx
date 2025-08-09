@@ -16,6 +16,9 @@ const AuthProvider = ({ children }) => {
         'Science & Technology',
         'History & Culture',
         'Curious Facts',
+        'Environment & Nature',
+        'Food & Science',
+        'Innovation & Startups',
         'Daily Discoveries',
         'Explainers (How It Works)'
     ]
@@ -79,10 +82,11 @@ const AuthProvider = ({ children }) => {
     // settiog up ovserver
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            setAuthLoading(false);
+            setAuthLoading(false)
             if (currentUser?.email) {
+                setUser(currentUser);
                 const userData = { email: currentUser.email };
+
                 axios.post('https://a-11-knowhive-srver.vercel.app/jwt', userData)
                     .then(res => {
                         const token = res.data.token;

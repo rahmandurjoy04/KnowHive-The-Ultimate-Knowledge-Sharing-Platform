@@ -76,16 +76,16 @@ const MyArticles = () => {
         return <Loading></Loading>
     }
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto min-h-[70vh]">
             <motion.section
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
             >
-                <table className="table">
+                <table className="table border-b border-gray-200">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='text-black font-bold'>
                             <th>Thumbnail</th>
                             <th>Post Title</th>
                             <th>Post Category</th>

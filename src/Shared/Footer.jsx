@@ -4,7 +4,7 @@ import { MdMailOutline } from 'react-icons/md';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#262626] text-white min-w-sm py-10">
+        <footer className="bg-[#1391e4] text-white min-w-sm py-10">
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Brand Description */}
                 <div>
