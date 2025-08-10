@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router';
 import ThemeToggle from '../Components/ThemeToggle';
 import { AuthContext } from '../AuthContext/AuthContext';
 import { toast } from 'react-toastify';
+import Logo from '../Components/Logo';
 
 const Navbar = () => {
     const { user, signOutUser, authLoading } = use(AuthContext);
@@ -36,31 +37,31 @@ const Navbar = () => {
     </>
     return (
         <div className="navbar text-white min-w-sm sticky top-0 z-10 bg-secondary shadow-sm">
-            <div className='w-11/12 mx-auto flex'>
-                <div className="navbar-start">
+            <div className='w-11/12 mx-auto flex justify-between items-center'>
+                <div className="flex">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-200 text-base-content rounded-box z-20 mt-3 w-52 p-2 shadow">
+                            className="menu flex menu-sm dropdown-content bg-base-200 text-base-content rounded-box z-20 mt-3 p-2 shadow">
                             {links}
                         </ul>
                     </div>
-                    <div className='flex gap-4 items-center'>
-                        <h1 className='text-3xl'><span className='font-extrabold'>Know</span>Hive</h1>
+                    <div className='flex space-x-4 justify-center items-center'>
+                        <Logo/>
                         <ThemeToggle></ThemeToggle>
                     </div>
                 </div>
-                <div className="navbar-center hidden sm:flex">
+                <div className=" hidden md:flex">
                     <ul className="menu menu-horizontal px-1 flex justify-center items-center gap-4">
                         {
                             links
                         }
                     </ul>
                 </div >
-                <div className="navbar-end space-x-3">
+                <div className=" flex justify-end space-x-3">
                     {
                         authLoading ? (<span className="loading loading-dots loading-xl mr-4"></span>
                         ) : (<>

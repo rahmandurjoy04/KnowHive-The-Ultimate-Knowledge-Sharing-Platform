@@ -1,14 +1,18 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdMailOutline } from 'react-icons/md';
+import { Link } from 'react-router';
+import light from "../assets/knowhive-banner.png"
+import Logo from '../Components/Logo';
 
 const Footer = () => {
     return (
-        <footer className="bg-secondary text-white min-w-sm py-10">
-            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <footer className="bg-secondary text-white min-w-sm  py-10">
+            <div className=" mx-auto max-w-11/12 px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Brand Description */}
                 <div>
-                    <h1 className='text-4xl font-bold mb-4'>KnowHive</h1>
+                    
+                    <Logo/>
                     <p className="text-sm">A buzzing community of learners exchanging wisdom</p>
                     <div className='my-3 text-md'>
                         <p className='flex items-center gap-2 mt-2'><MdMailOutline className='text-lg'></MdMailOutline> <a href="mailto:nainurrahman70@gmail.com" className='className="link hover:text-blue-500 hover:underline">'>nainurrahman70@gmail.com</a></p>
