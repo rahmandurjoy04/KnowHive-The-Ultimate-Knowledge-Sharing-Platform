@@ -15,6 +15,7 @@ Welcome to **KnowHive** — a collaborative platform where curiosity thrives, kn
 - ❤️ **Like System**: Appreciate insightful articles with one-click likes.
 - 🔍 **Trending Tags**: See what the community is buzzing about.
 - 🧠 **Top Contributors**: Celebrate the hive’s most active minds.
+- 📩 **Newsletter Subscription**: Stay updated with the latest articles, trends, and knowledge drops. Users can subscribe via email, and receive confirmation emails powered by Node.js + Nodemailer backend.
 
 ---
 
