@@ -62,7 +62,7 @@ const Newsletter = () => {
             <input
               type="email"
               placeholder="Your email address"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full md:max-w-sm"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={loading}

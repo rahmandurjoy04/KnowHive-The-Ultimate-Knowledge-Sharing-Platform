@@ -50,7 +50,7 @@ const RecentArticles = () => {
                                         src={article.thumbnailURL}
                                         alt="Thumbnail" />
                                 </figure>
-                                <div className="card-body">
+                                <div className="card-body mx-auto">
                                     <h2 className="card-title text-xl">{article.title}</h2>
                                     <p className='rounded-lg  w-full h-auto'>
                                         {

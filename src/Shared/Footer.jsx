@@ -27,14 +27,11 @@ const Footer = () => {
                 </div>
 
                 {/* Social Media */}
-                <div>
+                <div className='md:mx-auto'>
                     <h3 className="font-semibold text-lg mb-3">Follow Us</h3>
                     <div className="flex space-x-4 text-2xl">
                         <a href="https://www.facebook.com/durjoy4004/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                             <FaFacebook />
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
-                            <FaTwitter />
                         </a>
                         <a href="https://github.com/rahmandurjoy04" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                             <FaGithub />

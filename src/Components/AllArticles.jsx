@@ -105,7 +105,7 @@ const AllallArticles = () => {
                                         }
                                         <div className="card bg-base-100  border min-w-xs max-w-sm mx-auto sm:max-w-lg h-full shadow-sm">
 
-                                            <div className="card-body  p-3">
+                                            <div className="card-body mx-auto p-3">
                                                 <img src={article.thumbnailURL} className='w-full h-2/3 object-cover rounded-lg' alt="Thumbnail" />
                                                 <h2 className="card-title text-xl">{article.title}</h2>
                                                 <p className='rounded-lg text-lg  w-full h-auto'>

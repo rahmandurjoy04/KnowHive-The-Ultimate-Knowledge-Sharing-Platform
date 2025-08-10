@@ -32,18 +32,32 @@ const CategoryArticles = () => {
     }
 
     return (
-        <div>
+        <div className='mx-auto min-w-sm'>
             <h2 className="text-3xl font-semibold mb-4  text-center mt-5">{decodeURIComponent(categoryName)} Articles</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-8">
                 {articles.map(article => (
                     <div key={article._id} className="card bg-base-100 shadow border">
                         <img src={article.thumbnailURL} className="h-[200px] w-full rounded-t-lg object-fit" alt="" />
-                        <div className="card-body">
+                        <div className="card-body ">
                             <h2 className="card-title text-3xl">{article.title}</h2>
-                            <p className='bg-gray-100 rounded-xl py-3 px-2 dark:text-black'>{article.content}</p>
-                            <div className='flex justify-between mt-3'>
-                                <span className='text-sm font-semibold'>By {article.username}</span>
-                                <span className='text-sm font-semibold'>Date: {article.date}</span>
+                            <p className='rounded-lg  w-full h-auto'>
+                                {
+                                    article.content.length > 65
+                                        ? <>
+                                            {article.content.slice(0, 65)}{"..."}
+
+                                        </>
+                                        : article.content
+                                }
+                            </p>
+                            <div className='flex justify-between items-center'>
+                                <Link
+                                    to={`/articles/${article._id}`}
+                                    className=" btn-primary text-white btn"
+                                >
+                                    See More
+                                </Link>
+                                <span className='text-sm font-semibold'>{article.date}</span>
                             </div>
                         </div>
                     </div>
