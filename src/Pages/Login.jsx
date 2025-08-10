@@ -52,12 +52,15 @@ const Login = () => {
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col gap-10 md:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <Lottie className='w-auto md:w-[700px]' animationData={loginLottie} loop={true}></Lottie>
+                    <Lottie className='w-auto bg-base-200 md:w-[700px]' animationData={loginLottie} loop={true}></Lottie>
                 </div>
-                <div className=" w-full max-w-sm shrink-0">
+                <div className=" w-full max-w-sm relative shrink-0">
                     <div className="card-body bg-base-100 rounded-lg">
+                        <Link to={'/'}>
+                            <button className='btn absolute hidden md:flex -left-15 -top-10 rounded-full border border-red-800 bg-red-600 font-bold'>x</button>
+                        </Link>
                         <h1 className="text-5xl font-bold text-center">Login now!</h1>
 
                         <button onClick={handleGoogleSignIn} className="btn mt-5 text-xl bg-white text-black border-[#e5e5e5]">
@@ -68,7 +71,7 @@ const Login = () => {
                         <div className="divider">X</div>
 
 
-                        <form onSubmit={handleLogin}>
+                        <form onSubmit={handleLogin} className='relative'>
                             <fieldset className="fieldset">
                                 <label className="label">Email</label>
                                 <input type="email" name='email' className="input w-full" placeholder="Email" />
@@ -78,7 +81,7 @@ const Login = () => {
                             </fieldset>
                         </form>
                         <Link className='text-center' to={'/register'}>Don't have an Account? <span className='text-blue-500'>Register</span> Now</Link>
-                    <Link to={'/'}><button className='btn w-full bg-primary shadow-lg text-white'>Back to Home</button></Link>
+                        <Link to={'/'}><button className='btn w-full bg-primary shadow-lg text-white flex md:hidden'>Back to Home</button></Link>
                     </div>
                 </div>
             </div>

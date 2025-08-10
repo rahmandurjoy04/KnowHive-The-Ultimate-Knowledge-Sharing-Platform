@@ -23,19 +23,23 @@ const Navbar = () => {
     }
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/allArticles'}>All Articles</NavLink>
-        <NavLink to={'/myArticles'}>My Articles</NavLink>
-        <NavLink to={'/postArticles'}>Post Articles</NavLink>
+        {
+            user && <>
+                <NavLink to={'/allArticles'}>All Articles</NavLink>
+                <NavLink to={'/myArticles'}>My Articles</NavLink>
+                <NavLink to={'/postArticles'}>Post Articles</NavLink>
+            </>
+        }
         <NavLink to={'/contributors'}>Contributors</NavLink>
         <NavLink to={'/about'}>About Us</NavLink>
 
     </>
     return (
-        <div className="navbar text-white min-w-sm  bg-[#1391e4] shadow-sm">
+        <div className="navbar text-white min-w-sm sticky top-0 z-10 bg-secondary shadow-sm">
             <div className='w-11/12 mx-auto flex'>
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost sm:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                         </div>
                         <ul
@@ -97,7 +101,7 @@ const Navbar = () => {
                                     !user && <div>
                                         {
                                             (<>
-                                                <Link to={'/login'} ><button className='btn'>LogIn</button></Link>
+                                                <Link to={'/login'} ><button className='btn btn-primary'>LogIn</button></Link>
                                             </>)
                                         }
                                     </div>

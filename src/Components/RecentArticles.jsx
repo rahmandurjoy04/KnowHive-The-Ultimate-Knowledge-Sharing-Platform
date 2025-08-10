@@ -44,32 +44,32 @@ const RecentArticles = () => {
                             animate="visible"
                             variants={fadeIn}
                         >
-                            <div className="card bg-base-100 w-auto  h-full shadow-md">
+                            <div className="card bg-base-100 w-auto border-white border  h-full shadow-md">
                                 <figure>
                                     <img className='h-[250px] w-full'
                                         src={article.thumbnailURL}
-                                        alt="Thumbnail URL" />
+                                        alt="Thumbnail" />
                                 </figure>
                                 <div className="card-body">
-                                    <h2 className="card-title text-2xl">{article.title}</h2>
-                                    <p className='rounded-lg text-lg dark:text-black  w-full h-auto'>
+                                    <h2 className="card-title text-xl">{article.title}</h2>
+                                    <p className='rounded-lg  w-full h-auto'>
                                         {
-                                            article.content.length > 55
+                                            article.content.length > 65
                                                 ? <>
-                                                    {article.content.slice(0, 55)}{" "}
-                                                    <Link
-                                                        to={`/articles/${article._id}`}
-                                                        className="text-primary hover:text-blue-700"
-                                                    >
-                                                        See More...
-                                                    </Link>
+                                                    {article.content.slice(0, 65)}{"..."}
+
                                                 </>
                                                 : article.content
                                         }
                                     </p>
-                                    <div className='flex justify-between'>
-                                        <span className='text-sm font-semibold'>By {article.username}</span>
-                                        <span className='text-sm font-semibold'>Date: {article.date}</span>
+                                    <div className='flex justify-between items-center'>
+                                        <Link
+                                            to={`/articles/${article._id}`}
+                                            className=" btn-primary text-white btn"
+                                        >
+                                            See More
+                                        </Link>
+                                        <span className='text-sm font-semibold'>{article.date}</span>
                                     </div>
                                 </div>
                             </div>

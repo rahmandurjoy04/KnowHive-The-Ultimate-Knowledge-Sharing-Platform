@@ -14,6 +14,15 @@
   --color-base-content: #040316;
 }
 
+@plugin "daisyui/theme" {
+  name: "dark";
+
+  --color-primary: #0d68a0;      
+  --color-secondary: #7db4d8;   
+  --color-base-200: #1f2937;     
+  --color-base-content: #f0f1f7; 
+}
+
 a.active {
-  @apply font-bold bg-[#0d68a0] rounded-xl px-2 py-0.5
+  @apply font-bold bg-primary rounded-xl px-2 py-0.5
 }

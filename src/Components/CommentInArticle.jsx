@@ -71,7 +71,7 @@ const CommentInArticle = ({likesCount,setLikesCount,commentsCount}) => {
         return <p className='text-center py-10 text-3xl bg-gray-300 rounded-b-lg'>Please Login to Like & Comment</p>
     }
     return (
-        <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-b-lg shadow-md bg-base-100">
+        <div className="flex flex-col p-6 space-y-6 overflow-hidden rounded-b-lg shadow-md bg-base-100">
             <h1 className='text-xl text-center border rounded-xl py-2 bg-blue-300 font-bold'>Write Your Comment</h1>
             <div className="flex space-x-4">
                 <img alt="" src={user?.photoURL} className="object-cover w-12 h-12 rounded-full shadow " />

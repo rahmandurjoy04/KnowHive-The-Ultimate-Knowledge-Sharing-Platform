@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Loading from '../Components/Loading';
 
 const Contributors = () => {
     const [contributors, setContributors] = useState([]);
@@ -19,7 +20,7 @@ const Contributors = () => {
             });
     }, []);
 
-    if (loading) return <p className="text-center py-10">Loading contributors...</p>;
+    if (loading) return <p className="text-center py-10"><Loading></Loading></p>;
     if (error) return <p className="text-center py-10 text-red-500">Error: {error}</p>;
 
 

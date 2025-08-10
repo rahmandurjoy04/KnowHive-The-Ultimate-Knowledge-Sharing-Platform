@@ -85,7 +85,7 @@ const MyArticles = () => {
                 <table className="table border-b border-gray-200">
                     {/* head */}
                     <thead>
-                        <tr className='text-black font-bold'>
+                        <tr className='font-bold'>
                             <th>Thumbnail</th>
                             <th>Post Title</th>
                             <th>Post Category</th>
@@ -100,11 +100,12 @@ const MyArticles = () => {
                                 <tr key={myArticle._id}>
                                     <td>
                                         <div className="flex items-center gap-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle h-12 w-12">
+                                            <div className="avatar border border-white rounded-2xl">
+                                                <div className="mask mask-squircle  h-12 w-12">
                                                     <img
                                                         src={myArticle?.thumbnailURL||null}
-                                                        alt="Post Thumbnail" />
+                                                        alt="Post Thumbnail"
+                                                     />
                                                 </div>
                                             </div>
                                             <div>
